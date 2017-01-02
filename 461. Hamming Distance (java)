@@ -1,0 +1,16 @@
+public class Solution {
+  public int hammingDistance(int x, int y) {
+      int mod1,mod2;
+      int count=0;
+      int max=x>y?x:y;
+      while(max>0){
+        mod1=x%2;//将x转换成2进制
+        x=x/2;//x位数减一
+        mod2=y%2;
+        y=y/2;
+        max=max/2;
+        if(mod1!=mod2){count++;}//比较xy的二进制中不同的位数
+      }
+    return count;
+    }
+}
